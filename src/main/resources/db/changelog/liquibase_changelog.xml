@@ -33,6 +33,16 @@
             <column name="name">Москва</column>
             <column name="description">Не забудьте посетить Красную площадь</column>
         </insert>
+        <insert tableName="city">
+            <column name="id">4</column>
+            <column name="name">Питер</column>
+            <column name="description">В Питере- ну вы сами знаете</column>
+        </insert>
+        <insert tableName="city">
+            <column name="id">5</column>
+            <column name="name">Киев</column>
+            <column name="description">Welcome to Ukraine</column>
+        </insert>
 
     </changeSet>
 

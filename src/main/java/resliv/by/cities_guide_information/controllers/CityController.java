@@ -15,23 +15,24 @@ import static lombok.AccessLevel.PRIVATE;
 @RestController
 @RequiredArgsConstructor
 @FieldDefaults(level = PRIVATE, makeFinal = true)
+@RequestMapping("/api/v1/cities")
 public class CityController {
 
     CityFacade cityFacade;
 
-    @GetMapping("/api/v1/cities")
+    @GetMapping
     public ResponseEntity<List<CityDto>> find() {
 
         return ResponseEntity.ok(cityFacade.find());
     }
 
-    @PostMapping("/api/v1/cities")
+    @PostMapping
     public ResponseEntity<CityDto> create(@Valid @RequestBody CityDto cityDto) {
         CityDto response = cityFacade.create(cityDto);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping("/api/v1/cities/{cityId}")
+    @PutMapping("/{cityId}")
     public ResponseEntity<CityDto> update(@PathVariable Long cityId,
                                              @Valid @RequestBody CityDto cityDto) {
 
@@ -39,7 +40,7 @@ public class CityController {
         return ResponseEntity.ok(response);
     }
 
-    @DeleteMapping("/api/v1/cities/{cityId}")
+    @DeleteMapping("/{cityId}")
     public void delete(@PathVariable Long cityId) {
 
         cityFacade.delete(cityId);

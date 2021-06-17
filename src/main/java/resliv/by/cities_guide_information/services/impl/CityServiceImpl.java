@@ -50,4 +50,9 @@ public class CityServiceImpl implements CityService {
     public void delete(Long id) {
         cityRepository.deleteById(id);
     }
+
+    @Override
+    public List<City> findByNameContains(String name) {
+        return cityRepository.findByNameContainingIgnoringCase(name.trim());
+    }
 }
