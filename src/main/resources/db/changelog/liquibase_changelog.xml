@@ -1,0 +1,39 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-00001" author="ArsenKhalafian">
+        <createTable tableName="city">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="varchar(64)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="description" type="varchar(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert-00001" author="ArsenKhalafian">
+        <!-- city -->
+        <insert tableName="city">
+            <column name="id">1</column>
+            <column name="name">Минск</column>
+            <column name="description">The cleanest city in Europe</column>
+        </insert>
+        <insert tableName="city">
+            <column name="id">2</column>
+            <column name="name">Прага</column>
+            <column name="description">Не забудьте попробовать местное пиво</column>
+        </insert>
+        <insert tableName="city">
+            <column name="id">3</column>
+            <column name="name">Москва</column>
+            <column name="description">Не забудьте посетить Красную площадь</column>
+        </insert>
+
+    </changeSet>
+
+</databaseChangeLog>
