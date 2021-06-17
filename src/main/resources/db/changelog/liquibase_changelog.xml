@@ -21,7 +21,7 @@
         <insert tableName="city">
             <column name="id">1</column>
             <column name="name">Минск</column>
-            <column name="description">The cleanest city in Europe</column>
+            <column name="description">Самый чистый город Европы</column>
         </insert>
         <insert tableName="city">
             <column name="id">2</column>
